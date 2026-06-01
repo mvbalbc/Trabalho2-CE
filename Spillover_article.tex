@@ -1,0 +1,149 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+
+% Pacotes adicionados para suporte à língua portuguesa
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Título da sua Pesquisa de Análise Estatística\\
+%{\footnotesize \textsuperscript{*}Nota: Subtítulos não são capturados no Xplore e não devem ser usados}
+\thanks{Identifique a agência de financiamento aqui. Se não houver, exclua isto.}
+}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Marcus Cavalcante}
+\IEEEauthorblockA{\textit{Departamento de Ciência da Computação} \\
+Ciência da Computação \\
+\textit{Universidade de Brasília}\\
+Brasília - DF, Brasil \\
+mv.balbc@gmail.com}
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} João Zago}
+\IEEEauthorblockA{\textit{departamento / curso} \\
+\textit{nome da instituição}\\
+Cidade, País \\
+email ou ORCID}
+\and
+\IEEEauthorblockN{3\textsuperscript{} Gustavão}
+\IEEEauthorblockA{\textit{departamento / curso} \\
+\textit{nome da instituição}\\
+Cidade, País \\
+email ou ORCID}
+% Adicione mais blocos de autores conforme necessário (3rd, 4th, etc.)
+}
+
+\maketitle
+
+\begin{abstract}
+Este resumo deve conter uma síntese de toda a sua pesquisa. Indique o contexto do problema, qual base de dados foi utilizada, o objetivo principal de se realizar uma análise estatística descritiva e os principais resultados e insights encontrados. O resumo deve ser conciso e permitir que o leitor entenda rapidamente a essência do trabalho.
+\end{abstract}
+
+\begin{IEEEkeywords}
+análise estatística, análise descritiva, banco de dados, \textit{data science}, palavras-chave do seu tema.
+\end{IEEEkeywords}
+
+\section{Introdução}
+Nesta seção, contextualize o tema principal do seu trabalho e a importância da análise de dados para o problema em questão.
+\begin{itemize}
+    \item \textbf{Contexto:} Apresente o domínio da aplicação, a área de estudo e o problema que motiva a análise.
+    \item \textbf{Problema e Objetivo:} Qual é a pergunta de pesquisa? O que você busca entender com essa base de dados? Deixe claro que o objetivo é realizar uma análise estatística descritiva.
+    \item \textbf{Estrutura do Artigo:} Descreva de forma breve como o restante do artigo está organizado (ex: "A Seção II detalha a metodologia e base de dados, a Seção III apresenta...").
+\end{itemize}
+
+\section{Metodologia}
+Descreva de forma estruturada a origem dos seus dados e todos os procedimentos metodológicos realizados para que a análise descritiva fosse possível.
+
+\subsection{Descrição da Base de Dados}
+Detalhe de onde os dados foram extraídos (sistemas, repositórios públicos como Kaggle/UCI, etc.). Qual é o contexto temporal (período de coleta)? Qual é o volume de dados (número de instâncias/linhas e atributos/colunas)?
+
+\subsection{Dicionário de Variáveis}
+Apresente as variáveis mais importantes que farão parte da sua análise. Classifique-as (quantitativas discretas/contínuas, qualitativas nominais/ordinais) e explique o que representam.
+% Exemplo de Tabela para as variáveis:
+\begin{table}[htbp]
+\caption{Principais Variáveis do Banco de Dados}
+\begin{center}
+\begin{tabular}{|c|c|p{4cm}|}
+\hline
+\textbf{Variável} & \textbf{Tipo} & \textbf{Descrição} \\
+\hline
+Idade & Numérica & Idade do indivíduo registrado na base. \\
+\hline
+Categoria & Categórica & Categoria do produto (A, B ou C). \\
+\hline
+\end{tabular}
+\label{tab_variaveis}
+\end{center}
+\end{table}
+
+\subsection{Pré-processamento e Limpeza dos Dados}
+Explique quais procedimentos de engenharia de dados foram necessários.
+\begin{itemize}
+    \item Como foram tratados os dados ausentes (nulos/NaN)?
+    \item Houve remoção ou tratamento de \textit{outliers} (valores atípicos)?
+    \item Foram criadas novas variáveis a partir das existentes?
+\end{itemize}
+
+\section{Resultados: Análise Estatística Descritiva}
+Esta é a seção central do seu trabalho empírico. Apresente os resultados subdividindo as análises de forma lógica, sempre apoiando o texto com gráficos e tabelas.
+
+\subsection{Medidas de Tendência Central e Dispersão}
+Para as variáveis numéricas principais, apresente e discuta estatísticas como: média, mediana, moda, desvio padrão, variância, valores mínimos, máximos e quartis. Utilize tabelas para condensar essas informações de maneira visual.
+
+\subsection{Análise Univariada}
+Explore a distribuição das variáveis individualmente para entender seu comportamento.
+\begin{itemize}
+    \item Para variáveis categóricas: utilize gráficos de barras ou setores para mostrar frequências absolutas ou relativas.
+    \item Para variáveis numéricas: utilize histogramas ou diagramas de caixa (\textit{boxplots}) para evidenciar assimetrias e a distribuição geral.
+\end{itemize}
+
+% Exemplo de como inserir figura:
+% \begin{figure}[htbp]
+% \centerline{\includegraphics[width=0.8\linewidth]{caminho_para_figura.png}}
+% \caption{Distribuição da Variável X.}
+% \label{fig_dist_x}
+% \end{figure}
+
+\subsection{Análise Bivariada / Multivariada}
+Investigue e reporte a relação entre duas ou mais variáveis.
+\begin{itemize}
+    \item Variável Numérica x Numérica: Gráficos de dispersão (\textit{scatter plots}) e análise de correlação linear (ex: matriz de correlação de Pearson ou Spearman).
+    \item Variável Categórica x Numérica: Boxplots agrupados, ou gráficos de barras demonstrando médias/medianas por categoria.
+\end{itemize}
+
+\section{Discussão dos Resultados}
+Nesta seção, saia da descrição puramente matemática/gráfica e foque na interpretação negocial ou científica.
+\begin{itemize}
+    \item Quais foram os \textit{insights} mais interessantes?
+    \item Os dados revelaram algum padrão surpreendente ou esperado?
+    \item Como esses resultados respondem ao problema proposto na Introdução?
+\end{itemize}
+
+\section{Conclusão e Trabalhos Futuros}
+Apresente o fechamento do seu artigo. Recapitule brevemente o objetivo e apresente as principais conclusões que puderam ser tiradas dessa análise estatística descritiva.
+
+Adicionalmente, sugira "Trabalhos Futuros", apontando limitações deste estudo e o que poderia ser feito como próximo passo (por exemplo, a aplicação de testes de inferência estatística, modelos preditivos de \textit{Machine Learning}, ou coleta de novos dados).
+
+\section*{Agradecimentos}
+Coloque aqui os agradecimentos a instituições, professores, bolsas de pesquisa ou pessoas que apoiaram o desenvolvimento do trabalho (Opcional).
+
+\section*{Referências}
+Liste as referências bibliográficas seguindo rigorosamente o padrão IEEE. Inclua a fonte da base de dados, bibliotecas de software utilizadas (ex: Pandas, Scipy, R), livros de estatística e outros artigos científicos correlatos.
+
+\begin{thebibliography}{00}
+\bibitem{b1} Autor1, Autor2, ``Título do Artigo ou Livro,'' \textit{Nome do Periódico ou Editora}, vol. X, pp. Y--Z, Ano.
+\bibitem{b2} Nome do Repositório (ex: Kaggle), ``Título do Conjunto de Dados.'' Disponível em: \texttt{http://link-do-dataset.com}. Acesso em: 1 jun. 2026.
+\bibitem{b3} W. McKinney, ``Data Structures for Statistical Computing in Python,'' nas \textit{Proc. of the 9th Python in Science Conference}, pp. 51--56, 2010.
+\end{thebibliography}
+
+\end{document}

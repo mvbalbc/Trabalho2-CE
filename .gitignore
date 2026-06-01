@@ -1,0 +1,26 @@
+# Arquivos de compilação do LaTeX
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.synctex.gz
+*.toc
+
+# PDF gerado pela compilação (remova caso queira versionar o PDF final)
+Spillover_article.pdf
+
+# PDFs de referência
+An introduction to descriptive statistics: A review and practical guide.pdf
+An introduction to descriptive statistics_ A review and practical guide (Traduzido)).pdf
+
+# Pasta IEEE
+IEEE_Conference_Template/
