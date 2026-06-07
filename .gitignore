@@ -24,3 +24,10 @@ An introduction to descriptive statistics_ A review and practical guide (Traduzi
 
 # Pasta IEEE
 IEEE_Conference_Template/
+
+# Datasets
+*.zip
+archive/
+analise_steam_indie.py
+Respostas_Analise_Indie.md
+run_analysis.py 

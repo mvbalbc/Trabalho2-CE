@@ -35,7 +35,7 @@ mv.balbc@gmail.com}
 Cidade, País \\
 email ou ORCID}
 \and
-\IEEEauthorblockN{3\textsuperscript{} Gustavão}
+\IEEEauthorblockN{3\textsuperscript{} Gustavo Macedo}
 \IEEEauthorblockA{\textit{departamento / curso} \\
 \textit{nome da instituição}\\
 Cidade, País \\
@@ -54,12 +54,15 @@ análise estatística, análise descritiva, banco de dados, \textit{data science
 \end{IEEEkeywords}
 
 \section{Introdução}
-Nesta seção, contextualize o tema principal do seu trabalho e a importância da análise de dados para o problema em questão.
+O mercado de jogos independentes (indie) tem crescido exponencialmente nas últimas décadas, tornando-se um dos pilares de inovação da indústria de entretenimento digital. Com o aumento da competitividade, o comportamento dos estúdios no que tange à criação de continuações e franquias tornou-se um fenômeno relevante de estudo. Neste contexto, o \textit{spillover effect} (ou Efeito Halo) é um conceito que descreve como a percepção positiva ou o sucesso de um produto pode transbordar para outros da mesma marca. Na indústria de jogos, isso muitas vezes se traduz no aumento do interesse em títulos anteriores de um estúdio após o lançamento de uma sequência bem-sucedida.
+
+Este artigo realiza uma análise estatística descritiva focada em explorar o impacto das continuações no mercado indie. Nossa pesquisa busca responder a duas questões principais utilizando dados reais de mercado:
 \begin{itemize}
-    \item \textbf{Contexto:} Apresente o domínio da aplicação, a área de estudo e o problema que motiva a análise.
-    \item \textbf{Problema e Objetivo:} Qual é a pergunta de pesquisa? O que você busca entender com essa base de dados? Deixe claro que o objetivo é realizar uma análise estatística descritiva.
-    \item \textbf{Estrutura do Artigo:} Descreva de forma breve como o restante do artigo está organizado (ex: "A Seção II detalha a metodologia e base de dados, a Seção III apresenta...").
-\end{itemize}
+    \item \textbf{1º O "Efeito Halo" é real nos jogos indie?} Jogos originais de estúdios que lançaram sequências possuem um volume de vendas acumuladas significativamente maior do que jogos únicos de estúdios que nunca tiveram continuações?
+    \item \textbf{2º Qual a recepção crítica?} A nota média das sequências é maior, menor ou igual à dos jogos originais indie?
+\end{itemize}   
+
+O restante deste artigo detalha a metodologia de obtenção e pré-processamento dos dados na Seção II e apresenta os resultados quantitativos obtidos acompanhados de recursos visuais na Seção III.
 
 \section{Metodologia}
 Descreva de forma estruturada a origem dos seus dados e todos os procedimentos metodológicos realizados para que a análise descritiva fosse possível.
@@ -95,31 +98,31 @@ Explique quais procedimentos de engenharia de dados foram necessários.
 \end{itemize}
 
 \section{Resultados: Análise Estatística Descritiva}
-Esta é a seção central do seu trabalho empírico. Apresente os resultados subdividindo as análises de forma lógica, sempre apoiando o texto com gráficos e tabelas.
+Esta seção apresenta os resultados obtidos a partir do processamento e categorização dos dados do mercado de jogos independentes na Steam, respondendo às perguntas propostas com base nas estatísticas extraídas.
 
-\subsection{Medidas de Tendência Central e Dispersão}
-Para as variáveis numéricas principais, apresente e discuta estatísticas como: média, mediana, moda, desvio padrão, variância, valores mínimos, máximos e quartis. Utilize tabelas para condensar essas informações de maneira visual.
+\subsection{O Efeito Halo e as Vendas Acumuladas}
+Para avaliar a existência de um Efeito Halo, comparou-se a métrica de "donos estimados" (\textit{estimated owners}), que atua como \textit{proxy} para as vendas acumuladas. 
 
-\subsection{Análise Univariada}
-Explore a distribuição das variáveis individualmente para entender seu comportamento.
-\begin{itemize}
-    \item Para variáveis categóricas: utilize gráficos de barras ou setores para mostrar frequências absolutas ou relativas.
-    \item Para variáveis numéricas: utilize histogramas ou diagramas de caixa (\textit{boxplots}) para evidenciar assimetrias e a distribuição geral.
-\end{itemize}
+A média de donos para jogos \textbf{originais que possuem sequências} foi de \textbf{72.608}, enquanto a média para \textbf{jogos únicos (de estúdios sem sequências)} foi inferior, contabilizando \textbf{55.399}. Apesar da mediana permanecer estabilizada na faixa de 10.000 cópias em ambos os grupos devido às faixas de aproximação fornecidas pela plataforma (ex: "0 - 20000"), a considerável diferença na média indica uma presença forte do \textit{spillover effect}. Em suma, títulos que dão origem a franquias demonstram capacidade de atrair um público acumulado expressivamente superior, indicando um provável tráfego direcionado das sequências de volta aos jogos primordiais.
 
-% Exemplo de como inserir figura:
-% \begin{figure}[htbp]
-% \centerline{\includegraphics[width=0.8\linewidth]{caminho_para_figura.png}}
-% \caption{Distribuição da Variável X.}
-% \label{fig_dist_x}
-% \end{figure}
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\linewidth]{plot_owners.png}}
+\caption{Comparativo da média de vendas acumuladas (Owners) entre jogos originais de franquias e jogos únicos.}
+\label{fig_owners}
+\end{figure}
 
-\subsection{Análise Bivariada / Multivariada}
-Investigue e reporte a relação entre duas ou mais variáveis.
-\begin{itemize}
-    \item Variável Numérica x Numérica: Gráficos de dispersão (\textit{scatter plots}) e análise de correlação linear (ex: matriz de correlação de Pearson ou Spearman).
-    \item Variável Categórica x Numérica: Boxplots agrupados, ou gráficos de barras demonstrando médias/medianas por categoria.
-\end{itemize}
+\subsection{Avaliação e Engajamento Crítico}
+A segunda parte da nossa investigação tratou da qualidade percebida e engajamento do público medido pela nota média do jogo (calculada pela proporção de avaliações positivas sobre o total de interações).
+
+Ao observar as pontuações, a nota mediana das \textbf{sequências} foi de \textbf{83.69\%} (com média de 78.12\%). Por outro lado, a nota mediana dos \textbf{jogos originais} do nosso conjunto de dados ficou em \textbf{78.38\%} (com média de 73.46\%). 
+
+Esses resultados indicam de forma evidente que as sequências, no mercado indie, tendem a receber pontuações e percentuais de aprovação superiores aos originais. Isso pode ocorrer porque continuações se beneficiam do aprendizado do estúdio, capitalizam sobre mecânicas de jogo já consagradas pelo título de estreia, e muitas vezes engajam uma base de fãs mais direcionada e menos propensa a avaliações negativas casuais.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\linewidth]{plot_scores.png}}
+\caption{Comparativo da nota média e de aprovação das Sequências versus os Jogos Originais que lhes deram origem.}
+\label{fig_scores}
+\end{figure}
 
 \section{Discussão dos Resultados}
 Nesta seção, saia da descrição puramente matemática/gráfica e foque na interpretação negocial ou científica.
