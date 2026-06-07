@@ -28,6 +28,13 @@ IEEE_Conference_Template/
 # Datasets
 *.zip
 archive/
-analise_steam_indie.py
+# analise_steam_indie.py
+# Respostas_Analise_Indie.md
+# run_analysis.py 
+check.py
+check2.py
+check3.py
+BaseTrabalho.md
+Metodologia_Codigo.md
 Respostas_Analise_Indie.md
-run_analysis.py 
+run_analysis.py
