@@ -22,7 +22,7 @@
 \thanks{Identifique a agência de financiamento aqui. Se não houver, exclua isto.}
 }
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Marcus Cavalcante}
+\author{\IEEEauthorblockN{1\textsuperscript{st} Marcus Cavalcante - 160135974}
 \IEEEauthorblockA{\textit{Departamento de Ciência da Computação} \\
 Ciência da Computação \\
 \textit{Universidade de Brasília}\\
@@ -46,7 +46,12 @@ email ou ORCID}
 \maketitle
 
 \begin{abstract}
-Este resumo deve conter uma síntese de toda a sua pesquisa. Indique o contexto do problema, qual base de dados foi utilizada, o objetivo principal de se realizar uma análise estatística descritiva e os principais resultados e insights encontrados. O resumo deve ser conciso e permitir que o leitor entenda rapidamente a essência do trabalho.
+Este resumo deve conter uma síntese de toda a sua pesquisa. 
+Indique o contexto do problema, qual base de dados foi utilizada, 
+o objetivo principal de se realizar uma análise estatística 
+descritiva e os principais resultados e insights encontrados. 
+O resumo deve ser conciso e permitir que o leitor entenda 
+rapidamente a essência do trabalho.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -54,24 +59,47 @@ análise estatística, análise descritiva, banco de dados, \textit{data science
 \end{IEEEkeywords}
 
 \section{Introdução}
-O mercado de jogos independentes (indie) tem crescido exponencialmente nas últimas décadas, tornando-se um dos pilares de inovação da indústria de entretenimento digital. Com o aumento da competitividade, o comportamento dos estúdios no que tange à criação de continuações e franquias tornou-se um fenômeno relevante de estudo. Neste contexto, o \textit{spillover effect} (ou Efeito Halo) é um conceito que descreve como a percepção positiva ou o sucesso de um produto pode transbordar para outros da mesma marca. Na indústria de jogos, isso muitas vezes se traduz no aumento do interesse em títulos anteriores de um estúdio após o lançamento de uma sequência bem-sucedida.
+O mercado de jogos independentes (indie) tem crescido nas últimas décadas, 
+tornando-se um dos pilares de inovação da indústria de entretenimento digital. 
+Com o aumento da competitividade, o comportamento dos estúdios no que concerne 
+à criação de continuações e franquias tornou-se um fenômeno relevante de estudo. 
+Neste contexto, o \textit{spillover effect} (ou Efeito Halo) é um conceito que 
+descreve como a percepção positiva ou o sucesso de um produto pode transbordar 
+para outros da mesma marca. 
+Na indústria de jogos, isso se traduz no aumento do interesse em títulos 
+anteriores de um estúdio após o lançamento de uma sequência bem-sucedida.
 
-Este artigo realiza uma análise estatística descritiva focada em explorar o impacto das continuações no mercado indie. Nossa pesquisa busca responder a duas questões principais utilizando dados reais de mercado:
+Este artigo realiza uma análise estatística descritiva focada em explorar o 
+impacto das continuações no mercado indie. Nossa pesquisa busca responder a seis 
+questões principais utilizando dados reais de mercado:
+
 \begin{itemize}
-    \item \textbf{1º O "Efeito Halo" é real nos jogos indie?} Jogos originais de estúdios que lançaram sequências possuem um volume de vendas acumuladas significativamente maior do que jogos únicos de estúdios que nunca tiveram continuações?
-    \item \textbf{2º Qual a recepção crítica?} A nota média das sequências é maior, menor ou igual à dos jogos originais indie?
+    \item \textbf{1º O "Efeito Halo" é real nos jogos indie?} 
+    Jogos originais de estúdios que lançaram sequências possuem um volume 
+    de vendas acumuladas significativamente maior do que jogos únicos de 
+    estúdios que nunca tiveram sequências?
+    \item \textbf{2º Qual a recepção crítica?} 
+    A nota média das sequências é maior, menor ou igual à dos jogos originais indie?
 \end{itemize}   
 
-O restante deste artigo detalha a metodologia de obtenção e pré-processamento dos dados na Seção II e apresenta os resultados quantitativos obtidos acompanhados de recursos visuais na Seção III.
+O restante deste artigo detalha a metodologia de obtenção e pré-processamento 
+dos dados na Seção II e apresenta os resultados quantitativos obtidos 
+acompanhados de recursos visuais na Seção III.
 
 \section{Metodologia}
-Descreva de forma estruturada a origem dos seus dados e todos os procedimentos metodológicos realizados para que a análise descritiva fosse possível.
+Descreva de forma estruturada a origem dos seus dados e todos os procedimentos 
+metodológicos realizados para que a análise descritiva fosse possível.
 
 \subsection{Descrição da Base de Dados}
-Detalhe de onde os dados foram extraídos (sistemas, repositórios públicos como Kaggle/UCI, etc.). Qual é o contexto temporal (período de coleta)? Qual é o volume de dados (número de instâncias/linhas e atributos/colunas)?
+Detalhe de onde os dados foram extraídos (sistemas, repositórios 
+públicos como Kaggle/UCI, etc.). Qual é o contexto temporal (período de coleta)? 
+Qual é o volume de dados (número de instâncias/linhas e atributos/colunas)?
 
 \subsection{Dicionário de Variáveis}
-Apresente as variáveis mais importantes que farão parte da sua análise. Classifique-as (quantitativas discretas/contínuas, qualitativas nominais/ordinais) e explique o que representam.
+Apresente as variáveis mais importantes que farão parte da sua análise. 
+Classifique-as (quantitativas discretas/contínuas, 
+qualitativas nominais/ordinais) e explique o que representam.
+
 % Exemplo de Tabela para as variáveis:
 \begin{table}[htbp]
 \caption{Principais Variáveis do Banco de Dados}
@@ -98,34 +126,60 @@ Explique quais procedimentos de engenharia de dados foram necessários.
 \end{itemize}
 
 \section{Resultados: Análise Estatística Descritiva}
-Esta seção apresenta os resultados obtidos a partir do processamento e categorização dos dados do mercado de jogos independentes na Steam, respondendo às perguntas propostas com base nas estatísticas extraídas.
+Esta seção apresenta os resultados obtidos a partir do processamento e 
+categorização dos dados do mercado de jogos independentes na Steam, 
+respondendo às perguntas propostas com base nas estatísticas extraídas.
 
 \subsection{O Efeito Halo e as Vendas Acumuladas}
-Para avaliar a existência de um Efeito Halo, comparou-se a métrica de "donos estimados" (\textit{estimated owners}), que atua como \textit{proxy} para as vendas acumuladas. 
+Para avaliar a existência de um Efeito Halo, comparou-se a métrica de "donos estimados" 
+(\textit{estimated owners}), que atua como \textit{proxy} para as vendas acumuladas. 
 
-A média de donos para jogos \textbf{originais que possuem sequências} foi de \textbf{72.608}, enquanto a média para \textbf{jogos únicos (de estúdios sem sequências)} foi inferior, contabilizando \textbf{55.399}. Apesar da mediana permanecer estabilizada na faixa de 10.000 cópias em ambos os grupos devido às faixas de aproximação fornecidas pela plataforma (ex: "0 - 20000"), a considerável diferença na média indica uma presença forte do \textit{spillover effect}. Em suma, títulos que dão origem a franquias demonstram capacidade de atrair um público acumulado expressivamente superior, indicando um provável tráfego direcionado das sequências de volta aos jogos primordiais.
+A média de donos para jogos \textbf{originais que possuem sequências} foi de 
+\textbf{72.608}, enquanto a média para 
+\textbf{jogos únicos (de estúdios sem sequências)} foi inferior, contabilizando 
+\textbf{55.399}. Apesar da mediana permanecer estabilizada na faixa de 10.000 
+cópias em ambos os grupos devido às faixas de aproximação 
+fornecidas pela plataforma (ex: "0 - 20000"), a considerável diferença na média 
+indica uma presença forte do \textit{spillover effect}. 
+Em resumo, títulos que dão origem a franquias demonstram 
+capacidade de atrair um público acumulado expressivamente superior, 
+indicando um provável tráfego direcionado das sequências de volta aos jogos primordiais.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\linewidth]{plot_owners.png}}
-\caption{Comparativo da média de vendas acumuladas (Owners) entre jogos originais de franquias e jogos únicos.}
+\caption{Comparativo da média de vendas acumuladas (Owners) entre jogos 
+originais de franquias e jogos únicos.}
 \label{fig_owners}
 \end{figure}
 
 \subsection{Avaliação e Engajamento Crítico}
-A segunda parte da nossa investigação tratou da qualidade percebida e engajamento do público medido pela nota média do jogo (calculada pela proporção de avaliações positivas sobre o total de interações).
+A segunda parte da nossa investigação tratou da qualidade percebida e 
+engajamento do público medido pela nota média do jogo 
+(calculada pela proporção de avaliações positivas sobre o total de interações).
 
-Ao observar as pontuações, a nota mediana das \textbf{sequências} foi de \textbf{83.69\%} (com média de 78.12\%). Por outro lado, a nota mediana dos \textbf{jogos originais} do nosso conjunto de dados ficou em \textbf{78.38\%} (com média de 73.46\%). 
+Ao observar as pontuações, a nota mediana das 
+\textbf{sequências} foi de \textbf{83.69\%} (com média de 78.12\%). 
+Por outro lado, a nota mediana dos \textbf{jogos originais} 
+do nosso conjunto de dados ficou em \textbf{78.38\%} (com média de 73.46\%). 
 
-Esses resultados indicam de forma evidente que as sequências, no mercado indie, tendem a receber pontuações e percentuais de aprovação superiores aos originais. Isso pode ocorrer porque continuações se beneficiam do aprendizado do estúdio, capitalizam sobre mecânicas de jogo já consagradas pelo título de estreia, e muitas vezes engajam uma base de fãs mais direcionada e menos propensa a avaliações negativas casuais.
+Esses resultados indicam de forma evidente que as sequências, 
+no mercado indie, tendem a receber pontuações e percentuais de aprovação 
+superiores aos originais. Isso pode ocorrer porque continuações 
+se beneficiam do aprendizado do estúdio, capitalizam sobre mecânicas 
+de jogo já consagradas pelo título de estreia, 
+e muitas vezes engajam uma base de fãs mais 
+direcionada e menos propensa a avaliações negativas casuais.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\linewidth]{plot_scores.png}}
-\caption{Comparativo da nota média e de aprovação das Sequências versus os Jogos Originais que lhes deram origem.}
+\caption{Comparativo da nota média e de aprovação das Sequências versus 
+os Jogos Originais que lhes deram origem.}
 \label{fig_scores}
 \end{figure}
 
 \section{Discussão dos Resultados}
-Nesta seção, saia da descrição puramente matemática/gráfica e foque na interpretação negocial ou científica.
+Nesta seção, saia da descrição puramente matemática/gráfica e 
+foque na interpretação negocial ou científica.
 \begin{itemize}
     \item Quais foram os \textit{insights} mais interessantes?
     \item Os dados revelaram algum padrão surpreendente ou esperado?
@@ -133,15 +187,23 @@ Nesta seção, saia da descrição puramente matemática/gráfica e foque na int
 \end{itemize}
 
 \section{Conclusão e Trabalhos Futuros}
-Apresente o fechamento do seu artigo. Recapitule brevemente o objetivo e apresente as principais conclusões que puderam ser tiradas dessa análise estatística descritiva.
+Apresente o fechamento do seu artigo. Recapitule brevemente o objetivo 
+e apresente as principais conclusões que puderam ser tiradas dessa 
+análise estatística descritiva.
 
-Adicionalmente, sugira "Trabalhos Futuros", apontando limitações deste estudo e o que poderia ser feito como próximo passo (por exemplo, a aplicação de testes de inferência estatística, modelos preditivos de \textit{Machine Learning}, ou coleta de novos dados).
+Adicionalmente, sugira "Trabalhos Futuros", apontando limitações deste estudo 
+e o que poderia ser feito como próximo passo (por exemplo, a aplicação de 
+testes de inferência estatística, modelos preditivos de \textit{Machine Learning}, 
+ou coleta de novos dados).
 
 \section*{Agradecimentos}
-Coloque aqui os agradecimentos a instituições, professores, bolsas de pesquisa ou pessoas que apoiaram o desenvolvimento do trabalho (Opcional).
+Coloque aqui os agradecimentos a instituições, professores, 
+bolsas de pesquisa ou pessoas que apoiaram o desenvolvimento do trabalho (Opcional).
 
 \section*{Referências}
-Liste as referências bibliográficas seguindo rigorosamente o padrão IEEE. Inclua a fonte da base de dados, bibliotecas de software utilizadas (ex: Pandas, Scipy, R), livros de estatística e outros artigos científicos correlatos.
+Liste as referências bibliográficas seguindo rigorosamente o padrão IEEE. 
+Inclua a fonte da base de dados, bibliotecas de software utilizadas 
+(ex: Pandas, Scipy, R), livros de estatística e outros artigos científicos correlatos.
 
 \begin{thebibliography}{00}
 \bibitem{b1} Autor1, Autor2, ``Título do Artigo ou Livro,'' \textit{Nome do Periódico ou Editora}, vol. X, pp. Y--Z, Ano.
