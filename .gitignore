@@ -29,8 +29,8 @@ IEEE_Conference_Template/
 *.zip
 archive/
 # analise_steam_indie.py
-# Respostas_Analise_Indie.md
-# run_analysis.py 
+Respostas_Analise_Indie.md
+run_analysis.py 
 check.py
 check2.py
 check3.py

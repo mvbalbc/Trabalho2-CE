@@ -3,6 +3,8 @@ import re
 from collections import defaultdict
 import statistics
 import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
 
 def get_owners(est_owners_str):
     if not est_owners_str: return 0
@@ -208,6 +210,40 @@ for bar in bars:
     yval = bar.get_height()
     plt.text(bar.get_x() + bar.get_width()/2.0, yval, f'{yval:.2f}%', va='bottom', ha='center')
 plt.savefig('plot_scores.png')
+plt.close()
+
+# Gerar Gráficos Adicionais com Seaborn (Boxplots)
+# Para evitar distorções enormes no boxplot, limitaremos o dataset a jogos que tenham notas válidas e owners representativos
+owners_data = []
+scores_data = []
+
+def append_data(games_list, cat_name):
+    for g in games_list:
+        owners_data.append({"Category": cat_name, "Owners": g["owners"]})
+        if g["score"] is not None:
+            scores_data.append({"Category": cat_name, "Score": g["score"] * 100})
+
+append_data(original_com_sequencia, "Original")
+append_data(sequencia, "Sequência")
+append_data(jogo_unico_sem_sequencia, "Jogo Único")
+
+df_owners = pd.DataFrame(owners_data)
+df_scores = pd.DataFrame(scores_data)
+
+# Boxplot Owners
+plt.figure(figsize=(10, 6))
+sns.boxplot(x="Category", y="Owners", data=df_owners, palette="Set2", showfliers=False)
+plt.title("Dispersão de Vendas Acumuladas (Owners) sem Outliers Extremos")
+plt.ylabel("Owners Estimados")
+plt.savefig("boxplot_owners.png")
+plt.close()
+
+# Boxplot Scores
+plt.figure(figsize=(10, 6))
+sns.boxplot(x="Category", y="Score", data=df_scores, palette="Set2")
+plt.title("Dispersão das Notas Médias de Aprovação")
+plt.ylabel("Nota (%)")
+plt.savefig("boxplot_scores.png")
 plt.close()
 
 # Exportar dados classificados para CSV para verificação manual
