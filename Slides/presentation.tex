@@ -1,0 +1,144 @@
+\documentclass[11pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[labelformat=empty]{caption}
+\usetheme{Antibes}
+\usecolortheme{default}
+%\usepackage{utopia}
+
+% packages for charts
+\usepackage{pgfplots}
+%\pgfplotsset{compat=1.9}
+\usepackage{pgf-pie}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes.geometric,positioning,calc,arrows.meta}
+\usepackage{tikz-3dplot}
+\pgfplotsset{compat=1.18}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{collcell} 
+
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{array}  
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{pgf-pie}
+\usepackage{pgfplots}
+\usepackage{lmodern}
+\usepackage{enumerate}
+\usepackage{pgfplots}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[normalem]{ulem}
+\usepackage[framemethod=TikZ]{mdframed}
+\newmdenv [ %
+ skipabove=\topsep,
+ skipbelow=\topsep,
+ roundcorner = 5pt,
+ leftmargin = 2,
+ rightmargin = 2,
+ innertopmargin = 3,
+ splittopskip = 3]{mq}
+\usepackage{enumitem}
+\setitemize{label=\usebeamerfont*{itemize item}%
+    \usebeamercolor[fg]{itemize item}
+    \usebeamertemplate{itemize item}
+    }
+\setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
+\setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+\setbeamertemplate{enumerate mini template}{\insertenumlabel}
+\usepackage{multicol}
+\definecolor{myblue}{RGB}{0,0,128}
+\usepackage{ragged2e}
+\usepackage{listings}
+\usepackage{efbox,graphicx}
+\graphicspath{{imagens/}} % Define que todas as imagens estão na pasta 'imagens'
+\efboxsetup{linecolor=black,linewidth=2pt}
+\definecolor{formalshade}{rgb}{0.95,0.95,1}
+\definecolor{womenshade}{RGB}{191, 208, 235}
+\definecolor{menshade}{RGB}{163, 210, 186}
+\definecolor{lightyellow}{RGB}{255,255,224}
+
+
+\definecolor{shadecolor}{gray}{0.91}
+
+
+
+\addtobeamertemplate{footline} %numeração
+{%
+   \usebeamercolor[fg]{author in sidebar}
+   \vskip-1cm\hskip10pt
+   \insertframenumber\,/\,\inserttotalframenumber\kern1em\vskip3pt%
+}
+
+\makeatletter %footer
+\setbeamertemplate{headline}
+{%
+    \begin{beamercolorbox}[wd=\paperwidth,colsep=2pt]{upper separation line head}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=\paperwidth,colsep=2pt]{lower separation line head}
+    \end{beamercolorbox}
+} 
+
+%\addtobeamertemplate{block begin}{}{\justifying}
+
+\newcommand<>{\negrito}[1]{%
+  \alt#2{\textbf{#1}}{\widthofbold{#1}}}
+\let\olditem=\item% 
+\renewcommand{\item}{\olditem \justifying}%
+\makeatother
+
+% ---------- Adições Marcus
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amsmath}
+
+\newcommand{\fonte}[1]{\vspace{0.4em}{\scriptsize\color{steel}#1}}
+\newcommand{\artigoA}{Artigo 1: Melegati \& Wang (2020)}
+\newcommand{\artigoB}{Artigo 2: Klotins et al. (2018)}
+\newcommand{\artigoC}{Artigo 3: Klotins (2017)}
+
+%------------------------------------------------------------ PRIMEIRA PÁGINA
+
+
+
+\begin{document}
+
+\input{secoes/capa.tex}
+\input{secoes/introducao.tex}
+
+\input{secoes/Marcus/slide1.tex}
+\input{secoes/Marcus/slide2.tex}
+\input{secoes/Marcus/slide3.tex}
+\input{secoes/Marcus/slide4.tex}
+\input{secoes/Marcus/slide5.tex}
+\input{secoes/Marcus/slide6.tex}
+\input{secoes/Marcus/slide7.tex}
+\input{secoes/Marcus/slide8.tex}
+
+\input{secoes/tabela_1.tex}
+
+\input{secoes/referencia.tex}
+\input{secoes/agradecimentos.tex}
+
+
+%\begin{frame}
+%\frametitle{Bibliografia}
+%\justifying
+%\bibliographystyle{IEEEtran}
+%\bibliography{reference} 
+%\end{frame}
+\end{document}
