@@ -15,6 +15,24 @@
 *.synctex.gz
 *.toc
 
+
+### LaTeX ###
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.nav 
+*.snm
+
 # PDF gerado pela compilação (remova caso queira versionar o PDF final)
 Spillover_article.pdf
 
@@ -38,3 +56,4 @@ BaseTrabalho.md
 Metodologia_Codigo.md
 Respostas_Analise_Indie.md
 run_analysis.py
+BaseTrabalho.md
