@@ -1,19 +1,25 @@
-\begin{frame}{Crítca ao emprego do método}
+\begin{frame}{Crítica ao emprego do método}
 \begin{columns}[T,totalwidth=\textwidth]
-\column{0.58\textwidth}
+
+\column{0.52\textwidth} % Ajustado de 0.58 para 0.52
 \begin{itemize}
-    \item Dada a heterogeneidade da aplicação do método Case Survey é procurado as diretrizes do métodos em artigos seminais.
+    \item Dada a heterogeneidade da aplicação do método Case Survey, busca-se as diretrizes do método em artigos seminais.
     \item O procedimento clássico envolve: selecionar casos já existentes na literatura, criar um esquema de codificação, aplicar múltiplos avaliadores e analisar estatisticamente o conjunto codificado.
 \end{itemize}
 
-\column{0.50\textwidth}
+\column{0.43\textwidth} % Ajustado de 0.50 para 0.43 (Soma total = 0.95)
 \centering
 \begin{tikzpicture}[node distance=0.35cm]
-\node[draw=steel, fill=soft, rounded corners=2pt, minimum width=4.5cm, minimum height=0.7cm] (c1) {Casos publicados};
-\node[draw=steel, fill=soft, rounded corners=2pt, minimum width=4.5cm, minimum height=0.7cm, below=of c1] (c2) {Esquema de codificação};
-\node[draw=steel, fill=soft, rounded corners=2pt, minimum width=4.5cm, minimum height=0.7cm, below=of c2] (c3) {Múltiplos avaliadores};
-\node[draw=steel, fill=soft, rounded corners=2pt, minimum width=4.5cm, minimum height=0.7cm, below=of c3] (c4) {Análise estatística};
-\foreach \a/\b in {c1/c2,c2/c3,c3/c4}{\draw[-{Latex[length=2mm]}, thick] (\a) -- (\b);}
+% Reduzido levemente o minimum width de 4.5cm para 3.8cm para não estourar a margem
+\node[draw=steel, fill=soft, rounded corners=2pt, minimum width=3.8cm, minimum height=0.7cm, font=\small] (c1) {Casos publicados};
+\node[draw=steel, fill=soft, rounded corners=2pt, minimum width=3.8cm, minimum height=0.7cm, below=of c1, font=\small] (c2) {Esquema de codificação};
+\node[draw=steel, fill=soft, rounded corners=2pt, minimum width=3.8cm, minimum height=0.7cm, below=of c2, font=\small] (c3) {Múltiplos avaliadores};
+\node[draw=steel, fill=soft, rounded corners=2pt, minimum width=3.8cm, minimum height=0.7cm, below=of c3, font=\small] (c4) {Análise estatística};
+
+\foreach \a/\b in {c1/c2,c2/c3,c3/c4}{
+    \draw[-{Latex[length=2mm]}, thick] (\a) -- (\b);
+}
 \end{tikzpicture}
+
 \end{columns}
 \end{frame}

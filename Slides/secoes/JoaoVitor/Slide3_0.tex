@@ -1,0 +1,17 @@
+\begin{frame}{Fluxo de Trabalho}
+    \centering
+    \begin{tikzpicture}[node distance=0.4cm]
+        \node[draw=steel, fill=soft, rounded corners=2pt, minimum width=5.5cm, minimum height=0.7cm] (f1) {\small 1. Seleção de Casos (Amostragem)};
+        \node[draw=steel, fill=soft, rounded corners=2pt, minimum width=5.5cm, minimum height=0.7cm, below=of f1] (f2) {\small 2. Criação do Esquema de Codificação};
+        \node[draw=steel, fill=soft, rounded corners=2pt, minimum width=5.5cm, minimum height=0.7cm, below=of f2] (f3) {\small 3. Codificação (Conversão de dados)};
+        \node[draw=steel, fill=soft, rounded corners=2pt, minimum width=5.5cm, minimum height=0.7cm, below=of f3] (f4) {\small 4. Análise Estatística};
+        
+        \foreach \a/\b in {f1/f2, f2/f3, f3/f4}
+            \draw[-{Latex[length=2mm]}, thick, steel] (\a) -- (\b);
+    \end{tikzpicture}
+
+    \vspace{0.8em}
+    \begin{block}{Foco Analítico}
+        O ponto crítico é a \textbf{Codificação}: transformar relatos qualitativos em variáveis numéricas (ex: Escala Likert ou Binária).
+    \end{block}
+\end{frame}
