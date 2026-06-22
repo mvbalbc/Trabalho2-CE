@@ -5,38 +5,42 @@
 \usepackage[labelformat=empty]{caption}
 \usetheme{Antibes}
 \usecolortheme{default}
-%\usepackage{utopia}
 
-% packages for charts
-\usepackage{pgfplots}
-%\pgfplotsset{compat=1.9}
-\usepackage{pgf-pie}
+% --- PACOTES GRÁFICOS E DIAGRAMAS (Unificados) ---
 \usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgf-pie}
 \usetikzlibrary{patterns}
 \usetikzlibrary{shapes.geometric,positioning,calc,arrows.meta}
 \usepackage{tikz-3dplot}
 \pgfplotsset{compat=1.18}
+
+% --- TABELAS E FORMATAÇÃO DE TEXTO ---
 \usepackage[table]{xcolor}
 \usepackage[most]{tcolorbox}
 \usepackage{collcell} 
-
 \usepackage{hyperref}
-\usepackage{color}
 \usepackage{colortbl}
 \usepackage{multirow}
 \usepackage{rotating}
-\usepackage{array}  
-\usepackage{enumitem}
+\usepackage{array}   
 \usepackage{float}
 \usepackage{adjustbox}
-\usepackage{array}
-\usepackage{pgf-pie}
-\usepackage{pgfplots}
 \usepackage{lmodern}
-\usepackage{enumerate}
-\usepackage{pgfplots}
-\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{multicol}
+\usepackage{ragged2e}
+\usepackage{listings}
+\usepackage{efbox,graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amsmath}
 \usepackage[normalem]{ulem}
+
+% --- DIRETÓRIO DE IMAGENS ---
+\graphicspath{{imagens/}} 
+\efboxsetup{linecolor=black,linewidth=2pt}
+
+% --- CAIXAS CUSTOMIZADAS ---
 \usepackage[framemethod=TikZ]{mdframed}
 \newmdenv [ %
  skipabove=\topsep,
@@ -46,11 +50,8 @@
  rightmargin = 2,
  innertopmargin = 3,
  splittopskip = 3]{mq}
-\usepackage{enumitem}
-\setitemize{label=\usebeamerfont*{itemize item}%
-    \usebeamercolor[fg]{itemize item}
-    \usebeamertemplate{itemize item}
-    }
+
+% --- CONFIGURAÇÃO DE MARCADORES NATIVOS DO BEAMER ---
 \setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
 \setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
 \setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
@@ -58,31 +59,27 @@
 \setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
 \setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
 \setbeamertemplate{enumerate mini template}{\insertenumlabel}
-\usepackage{multicol}
+
+% --- DEFINIÇÕES DE CORES ---
 \definecolor{myblue}{RGB}{0,0,128}
-\usepackage{ragged2e}
-\usepackage{listings}
-\usepackage{efbox,graphicx}
-\graphicspath{{imagens/}} % Define que todas as imagens estão na pasta 'imagens'
-\efboxsetup{linecolor=black,linewidth=2pt}
 \definecolor{formalshade}{rgb}{0.95,0.95,1}
 \definecolor{womenshade}{RGB}{191, 208, 235}
 \definecolor{menshade}{RGB}{163, 210, 186}
 \definecolor{lightyellow}{RGB}{255,255,224}
-
-
 \definecolor{shadecolor}{gray}{0.91}
+\definecolor{steel}{RGB}{70, 130, 180}
+\definecolor{soft}{RGB}{240, 240, 240}
+\definecolor{accent}{RGB}{0, 150, 0}
 
-
-
-\addtobeamertemplate{footline} %numeração
+% --- CONFIGURAÇÕES DE LAYOUT (FOOTER & HEADERS) ---
+\addtobeamertemplate{footline} 
 {%
-   \usebeamercolor[fg]{author in sidebar}
+   \usebeamercolor[fg]{author in sidebar}%
    \vskip-1cm\hskip10pt
    \insertframenumber\,/\,\inserttotalframenumber\kern1em\vskip3pt%
 }
 
-\makeatletter %footer
+\makeatletter 
 \setbeamertemplate{headline}
 {%
     \begin{beamercolorbox}[wd=\paperwidth,colsep=2pt]{upper separation line head}
@@ -91,54 +88,93 @@
     \end{beamercolorbox}
 } 
 
-%\addtobeamertemplate{block begin}{}{\justifying}
-
-\newcommand<>{\negrito}[1]{%
-  \alt#2{\textbf{#1}}{\widthofbold{#1}}}
-\let\olditem=\item% 
-\renewcommand{\item}{\olditem \justifying}%
+% Justificar automaticamente os itens das listas
+\let\olditem=\item 
+\renewcommand{\item}{\olditem \justifying}
 \makeatother
 
-% ---------- Adições Marcus
-
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{amsmath}
-
+% --- COMANDOS CUSTOMIZADOS DOS INTEGRANTES ---
 \newcommand{\fonte}[1]{\vspace{0.4em}{\scriptsize\color{steel}#1}}
 \newcommand{\artigoA}{Artigo 1: Melegati \& Wang (2020)}
 \newcommand{\artigoB}{Artigo 2: Klotins et al. (2018)}
 \newcommand{\artigoC}{Artigo 3: Klotins (2017)}
 
-%------------------------------------------------------------ PRIMEIRA PÁGINA
-
-
-
+% ============================================================
+% INÍCIO DO DOCUMENTO
+% ============================================================
 \begin{document}
 
 \input{secoes/capa.tex}
-\input{secoes/introducao.tex}
 
-\input{secoes/Marcus/slide1.tex}
-\input{secoes/Marcus/slide2.tex}
-\input{secoes/Marcus/slide3.tex}
-\input{secoes/Marcus/slide4.tex}
-\input{secoes/Marcus/slide5.tex}
-\input{secoes/Marcus/slide6.tex}
-\input{secoes/Marcus/slide7.tex}
-\input{secoes/Marcus/slide8.tex}
 
-\input{secoes/tabela_1.tex}
 
+\input{secoes/introducao/introducao.tex}
+\input{secoes/objetivo/objetivo.tex}
+\input{secoes/questoes/questoes1.tex}
+\input{secoes/questoes/questoes2.tex}
+\input{secoes/metodo/metodo.tex}
+\input{secoes/metodo/base_dados_ampla1.tex}
+\input{secoes/metodo/base_dados_ampla2.tex}
+\input{secoes/metodo/base_dados_ampla3.tex}
+\input{secoes/metodo/base_dados_reduzida1.tex}
+\input{secoes/metodo/base_dados_reduzida2.tex}
+\input{secoes/metodo/base_dados_reduzida3.tex}
+\input{secoes/resultados/resultados.tex}
+\input{secoes/conclusao/limitacoes.tex}
+\input{secoes/conclusao/conclusao.tex}
+
+
+
+
+
+
+
+
+
+
+% ============================================================
+% ARQUIVADO
+% ============================================================
+
+% % Seções João Vitor
+% \input{secoes/JoaoVitor/Slide1.tex}
+
+% \input{secoes/JoaoVitor/Slide3_.tex}
+% \input{secoes/JoaoVitor/Slide3_0.tex}
+% \input{secoes/JoaoVitor/Slide3_1.tex}
+% \input{secoes/JoaoVitor/Slide3_2.tex}
+% \input{secoes/JoaoVitor/Slide3_3.tex}
+% \input{secoes/JoaoVitor/Slide3_4.tex}
+% \input{secoes/JoaoVitor/Slide5.tex}
+
+% % Seções Marcus
+% \input{secoes/Marcus/slide1.tex}
+% \input{secoes/Marcus/slide3.tex}
+% \input{secoes/Marcus/slide6.tex}
+% \input{secoes/Marcus/slide7.tex}
+
+% % Seções Gustavo
+% \input{secoes/Gustavo/slide1.tex}
+% \input{secoes/Gustavo/slide2.tex}
+% \input{secoes/Gustavo/slide3.tex}
+% \input{secoes/Gustavo/slide4.tex}
+% \input{secoes/Gustavo/slide5.tex}
+% \input{secoes/Gustavo/slide6.tex}
+% \input{secoes/Gustavo/slide7.tex}
+% \input{secoes/Gustavo/slide8.tex}
+% \input{secoes/Gustavo/slide9.tex}
+% \input{secoes/Gustavo/slide10.tex}
+% \input{secoes/Gustavo/slide11.tex}
+% \input{secoes/Gustavo/slide12.tex}
+% \input{secoes/Gustavo/slide13.tex}
+% \input{secoes/Gustavo/slide14.tex}
+
+% ============================================================
+% FIM DE ARQUIVADO
+% ============================================================
+
+% Encerramento
 \input{secoes/referencia.tex}
 \input{secoes/agradecimentos.tex}
 
-
-%\begin{frame}
-%\frametitle{Bibliografia}
-%\justifying
-%\bibliographystyle{IEEEtran}
-%\bibliography{reference} 
-%\end{frame}
 \end{document}
