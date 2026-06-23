@@ -1,14 +1,19 @@
-\section{Método}
 \begin{frame}
-\frametitle{Base de Dados Ampla - Préprocessamento}
+\frametitle{Base de Dados Ampla - Pré-processamento}
 \justifying
 
 \begin{itemize}
-    \item  Texto
+    \item \textbf{Desafio Principal:} O \textit{dataset} original não possui uma coluna oficial relacionando franquias (\textit{Franchise ID}).
     \vspace{0.2cm}
 
-    \item Texto
+    \item \textbf{Heurística de Classificação:} Agrupamento por estúdio desenvolvedor.
+    \begin{itemize}
+        \item \textbf{Jogo Único:} Estúdios com apenas um jogo publicado.
+        \item \textbf{Sequência:} Títulos de estúdios com múltiplos jogos que possuíam marcadores numéricos ou subtítulos clássicos de continuação (ex: "2", "II", "Part", "Return"), detectados via \textit{regex}.
+        \item \textbf{Original:} Demais títulos do estúdio que deu origem às sequências.
+    \end{itemize}
     \vspace{0.2cm}
 
+    \item \textbf{Limpeza Adicional:} Jogos sem avaliações (zero reviews) ou com valores nulos na categoria de preço foram descartados para não comprometer o cálculo de notas.
 \end{itemize}    
 \end{frame}

@@ -4,11 +4,20 @@
 \justifying
 
 \begin{itemize}
-    \item  Texto
+    \item \textbf{Fonte dos Dados:} Extraídos do "Steam Games Dataset" (Kaggle), contendo originalmente mais de 120.000 instâncias e quase 40 atributos.
     \vspace{0.2cm}
 
-    \item Texto
+    \item \textbf{Filtros Aplicados (Recorte Indie):}
+    \begin{itemize}
+        \item Presença da \textit{tag} "Indie" no campo de gêneros.
+        \item Jogos lançados a partir do ano de 2016.
+        \item Preço superior a \$1 dólar.
+    \end{itemize}
     \vspace{0.2cm}
 
+    \item \textbf{Propósito dos Filtros:} Expurgar \textit{shovelwares} (jogos de qualidade duvidosa), produtos abandonados e jogos gratuitos que não representam o mercado competitivo real.
+    \vspace{0.2cm}
+
+    \item \textbf{Escopo Final:} A amostra resultou em 50.464 jogos independentes.
 \end{itemize}    
 \end{frame}
